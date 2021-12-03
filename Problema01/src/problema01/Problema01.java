@@ -35,6 +35,7 @@ public class Problema01 {
         double promedio_estatura;
         boolean bandera = true ;
         int acumulador = 0;
+         String cadena_edades ="";
         do{
         System.out.println("Ingrese el nombre del jugador");
         nombre = entrada.nextLine();
@@ -60,6 +61,8 @@ public class Problema01 {
         
         acumulador = acumulador + 1;
         
+         cadena_edades = String.format ("%s%d ",cadena_edades,edad);
+        
          cadena = String.format("%s %d) %s -%s-, edad %d, estatura %.2f\n\n"
                  + "",cadena,acumulador,nombre,posicion,edad,estatura);
          
@@ -79,8 +82,9 @@ public class Problema01 {
         
         promedio_estatura =suma_estatura / contador_edades;
         
-        cadena = String.format("%s Promedio de edades:%.2f Promedio de"
-                + " estaturas: %.2f", cadena,
+        cadena = String.format("%s Listado de Edades:%s Promedio de edades:%.2f"
+                + " Promedio de"
+                + " estaturas: %.2f", cadena,cadena_edades,
                promedio_edades,promedio_estatura );
         
         System.out.printf("Listado de jugadores\n%s\n", cadena);
